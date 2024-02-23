@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WineX</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Estilos inline para carregamento inicial rápido -->
+    <style>
+        body {
+            background-color: transparent; /* Torna o fundo da página transparente */
+        }
+        .button_container {
+            display: flex; /* Utiliza Flexbox para alinhamento dos botões */
+            justify-content: space-evenly; /* Espaçamento uniforme entre os botões */
+            align-items: center; /* Centraliza os botões verticalmente */
+            visibility: hidden; /* Esconde inicialmente os botões para evitar exibição antes do carregamento */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Container para os botões -->
+    <div class="button_container">
+        <!-- Links dos botões, utilize o href para adicionar os links desejados -->
+        <a id="button-0" class="button_link" href="" target="_blank" rel="noopener noreferrer">Culinary Selections</a>
+        <a id="button-1" class="button_link" href="" target="_blank" rel="noopener noreferrer">Cocktail & Beverage Selections</a>
+    </div>
+
+    <!-- Script para manipulação do DOM após o carregamento da página -->
+    <script>
+        window.onload = function() {
+            var links = document.querySelectorAll('.button_link'); // Seleciona todos os elementos com a classe 'button_link'
+            links.forEach(function(link) {
+                link.target = "_parent"; // Altera o target dos links para "_parent"
+            });
+
+            // Revela os botões após o carregamento completo
+            document.querySelector('.button_container').style.visibility = 'visible';
+        };
+    </script>
+</body>
+
+</html>
